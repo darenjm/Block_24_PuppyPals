@@ -1,9 +1,11 @@
 import "./App.css";
+import { puppyList } from "./data.js";
 
 function App() {
+  console.log(puppyList);
   return (
     <>
-      <div>Hello puppies</div>
+      <div>{puppyList}</div>
     </>
   );
 }
