@@ -10,13 +10,26 @@ function App() {
   function handleClick() {
     //
   }
+  const featuredPup = puppies.find((pup) => pup.id === featPupId);
+
+  console.log(featuredPup);
 
   return (
     <>
       <div className="app">
         {puppies.map((puppy) => {
-          return <p onClick={()=>{console.log("puppy id: ", puppy.id)}} key={puppy.id}>{puppy.name}</p>;
+          return (
+            <p
+              onClick={() => {
+                setFeatPupId(puppy.id);
+              }}
+              key={puppy.id}
+            >
+              {puppy.name}
+            </p>
+          );
         })}
+        {featPupId && <p>{featPupId}</p>}
       </div>
     </>
   );
